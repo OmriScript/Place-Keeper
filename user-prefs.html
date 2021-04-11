@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/user-prefs.css">
+    <title>Place Keeper</title>
+</head>
+<body onload="init()">
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="./map.html">Map</a>
+    </nav>
+    <main>
+        <h1>user preferences</h1>
+        <form onsubmit="onSumbit(event)">
+            <div class="form-cell">
+                <label for="bg-color">Background Color:</label>
+                <input type="color" name="bg-color" id="bg-color">
+            </div>
+            
+            <div class="form-cell">
+                <label for="text-color">Text Color:</label>
+                <input type="color" name="text-color" id="text-color">
+            </div>
+
+            <div class="form-cell">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="form-cell">
+                <label for="date">Birth Day:</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+
+            <div class="form-cell">
+                <label for="age">Age:</label>
+                <input type="range" name="age" id="age" min="18" max="120" value="25" onchange="showAge(this.value);">
+                <span id="sAge">25</span>
+
+            </div>
+
+            <div class="form-cell">
+                <label for="birth-time">Birth Time:</label>
+                <input type="time" name="birth-time" id="birth-time" required>
+            </div>
+            
+            <div class="form-cell">
+                <button>submit</button>
+            </div>
+        </form>
+    </main>
+
+    <section>
+        <p class="forecast"></p>
+    </section>
+
+    <script src="./js/utilService.js"></script>
+    <script src="./js/storageService.js"></script>
+    <script src="./js/placeService.js"></script>
+    <script src="./js/userService.js"></script>
+    <script src="./js/userController.js"></script>
+
+</body>
+</html>
